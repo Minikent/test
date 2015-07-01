@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="lib/jstree/default/style.min.css">
+		<link rel="stylesheet" type="text/css" href="lib/select2/select2.css">
+		<script src="lib/jquery/jquery-2.1.4.min.js"></script>
+		<script src="lib/select2/select2.min.js"></script>
+		<script src="lib/jstree/jstree.min.js"></script>
+		<script src="js/index.js"></script>
+	</head>
+	<body>
+		<header>
+			<span class="gray header-caption">Таргетирование анкеты по торговым точкам</span>
+		</header>
+		<article>
+			<div class="select-widgets">
+				<div class="select-widget region">
+					<div class="label">Регион:</div>
+					<div class="input">
+						<div id="regions">
+							<ul>
+								<li>название большого региона
+									<ul>
+										<li>Регион поменьше
+											<ul>
+												<li>Маленький регион</li>
+												<li>Еще маленький регион</li>
+												<li>Третий маленький регион
+													<ul>
+														<li>Территория 1</li>
+														<li>Вторая</li>
+														<li>Еще</li>
+														<li>И еще одна</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>Второй средний регион</li>
+									</ul>
+								</li>
+								<li>Еще один большой</li>
+								<li>И вот такой тоже большой</li>
+							</ul>
+						</div>
+					</div>
+					<div class="close-btn" onclick="hideWidget('region')"></div>
+					<div class="comment">
+						Выберите один или несколько регионов и/или территорий где будет доступна анкета
+					</div>
+				</div>
+				<div class="select-widget status">
+					<div class="label">Статус:</div>
+					<div class="input">
+						<select>
+							<option>Открыта</option>
+							<option>Закрыта</option>
+							<option>Неизвестно</option>
+						</select>
+					</div>
+					<div class="close-btn" onclick="hideWidget('status');"></div>
+					<div class="comment"></div>
+				</div>
+				<div class="select-widget type">
+					<div class="label">Тип ТТ:</div>
+					<div class="input">
+						<select id="seller-type" style="border: 0px;" multiple>
+							<option>Гипермаркет</option>
+							<option>Магазин</option>
+							<option>Ларек</option>
+						</select>
+					</div>
+					<div class="close-btn" onclick="hideWidget('type');"></div>
+					<div class="comment"></div>
+				</div>
+				<div class="select-widget param">
+					<div class="label">Параметр:</div>
+					<div class="input">
+						<select>
+							<option>Равно</option>
+							<option>Не равно</option>
+							<option>Содержит</option>
+						</select>
+						<input type="text" class="textinput"/>
+					</div>
+					<div class="close-btn" onclick='hideWidget("param");'></div>
+					<div class="comment"></div>
+				</div>
+			</div>
+			<hr style="border-top: dashed 1px; margin:0px;" />
+			<div class="show-widget-btns">
+				<div class="comment">
+					Выберите критерии отбора вашей анкеты.
+				</div>
+				<div class="btn region" onclick = "showWidget('region');">
+					<div class="icon  icon-globe"></div>
+					<span class="caption">Регион и территория</span>
+				</div>
+				<div class="btn status" onclick = "showWidget('status');">
+					<div class="icon icon-check"></div>
+					<span class="caption">Статус</span>
+				</div>
+				<div class="btn type"  onclick="showWidget('type');">
+					<div class="icon icon-shop"></div>
+					<span class="caption">Тип ТТ</span>
+				</div>
+				<div class="btn param"  onclick="showWidget('param');">
+					<div class="icon icon-star"></div>
+					<span class="caption">Параметр</span>
+				</div>
+			</div>
+		</article>
+		<footer>
+			<a href="#">Новости</a>
+			<a href="#">Тех. поддержка</a>
+			<a href="#">Контактная информация</a>
+			<span class="copyright gray">&copy; &laquo;Первый БИТ&raquo;, 2014</span>			
+		</footer>
+	</body>
+</html> 
